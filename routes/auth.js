@@ -20,4 +20,15 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.post('/signup', async(req, res) => {
+    try{
+        console.log('Yes', req.body)
+        return res.status(200).send('Request accepted');
+
+    } catch (error){
+        console.log('***Captured in signup***', error);
+        res.status(500).send('Server error')
+    }
+});
+
 module.exports = router;
